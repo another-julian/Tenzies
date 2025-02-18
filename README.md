@@ -1,8 +1,29 @@
-# React + Vite
+# Tenzies Game 🎲
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Tenzies game built with React and Vite.
 
-Currently, two official plugins are available:
+## How to Play
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Roll the dice.
+2. Select the numbers you want to keep.
+3. Keep rolling until all dice show the same number.
+4. Try to win in the fewest rolls possible!
+
+## Installation & Running Locally 🚀
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/tenzies-game.git
+   cd tenzies-game
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open the provided local URL in your browser.
+
+Enjoy the game! 🎉
