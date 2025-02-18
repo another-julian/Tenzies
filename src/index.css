@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Karla", serif;
+}
+
+body {
+  background-color: #0b2434;
+  height: 100vh;
+  padding: 40px;
+}
+
+div#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+  min-width: 300px;
+  max-width: 720px;
+  min-height: 400px;
+  max-height: 500px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  text-align: center;
+}
+
+header {
+  max-width: 60ch;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.instructions {
+  font-size: 1.2rem;
+}
+
+.dice-container {
+  width: 100%;
+  max-width: 380px;
+  height: 100%;
+  max-height: 150px;
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  justify-items: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.die-btn {
+  background-color: #fff;
+  width: 100%;
+  max-width: 50px;
+  min-width: 40px;
+  aspect-ratio: 1 / 1;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px #56535363;
+  color: #111;
+}
+
+.die-btn.active {
+  background-color: #59e391;
+}
+
+.roll-btn {
+  background-color: #5035ff;
+  color: #f4f4f4;
+  border: none;
+  border-radius: 10px;
+  min-width: 160px;
+  width: 30%;
+  height: 60px;
+}
+
+.roll-btn:active {
+  transform: scale(1.1);
+}
+
+.roll-btn.active {
+  transform: scale(1.1);
+}
+
+button {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 450px) {
+  .die-container {
+    grid-template: auto auto auto / repeat(4, 1fr);
+    max-height: 200px;
+  }
+  main {
+    max-height: 600px;
+  }
+}
