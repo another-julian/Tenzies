@@ -1,9 +1,14 @@
 import React from "react";
 import Die from "./components/Die";
-import { getNewDiceData, setIsHeld } from "./lib/diceData";
+import Confetti from "./components/Confetti";
+import { getNewDiceData, setIsHeld, rollDiceData } from "./lib/diceData";
 
 function App() {
   const [diceData, setDiceData] = React.useState(() => getNewDiceData());
+
+  const gameWon = diceData.every(
+    (dieData) => dieData.isHeld && dieData.value === diceData[0].value
+  );
 
   const diceElements = diceData.map((dieData) => (
     <Die
@@ -18,8 +23,14 @@ function App() {
     setDiceData((prev) => setIsHeld(prev, id));
   }
 
+  function rollDice() {
+    if (gameWon) setDiceData(getNewDiceData());
+    else setDiceData((prev) => rollDiceData(prev));
+  }
+
   return (
     <main className="game-container">
+      {gameWon ? <Confetti /> : null}
       <header>
         <h1 className="title">Tenzies</h1>
         <p className="instructions">
@@ -28,7 +39,9 @@ function App() {
         </p>
       </header>
       <div className="dice-container">{diceElements}</div>
-      <button className="roll-btn">Roll</button>
+      <button className="roll-btn" onClick={rollDice}>
+        {gameWon ? "New Game" : "Roll"}
+      </button>
     </main>
   );
 }

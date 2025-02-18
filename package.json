@@ -1,8 +1,9 @@
 {
   "name": "tenzies",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "author": "another-julian",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
